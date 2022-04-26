@@ -8,7 +8,8 @@ function App() {
     {title: "bowser's live stream", id: 2},
     {title: "race on moo moo farm", id: 3}
   ])
-  
+  const [showEvents, setShowEvent] = useState(true)
+
   const handleClick = (id) => {
     setEvents(prevEvents =>{
       return prevEvents.filter(event => id !== event.id)
@@ -17,7 +18,13 @@ function App() {
   
   return (
     <div className="App">
-      {events.map((event, index) => (
+      {showEvents && (<div>
+        <button onClick={() => setShowEvent(false)}>hide events</button>
+      </div>)}
+      {!showEvents && (<div>
+       <button onClick={() => setShowEvent(true)}>show events</button>
+      </div>)}
+      {showEvents && events.map((event, index) => (
         <div key={event.id}>
           <h2>{index} - {event.title}</h2>
           <button onClick={() => handleClick(event.id)}>delete event</button>
