@@ -11,11 +11,16 @@ function App() {
     {title: "race on moo moo farm", id: 3}
   ])
   const [showEvents, setShowEvent] = useState(true)
+  const [showModal, setShowModal] = useState(true)
 
   const handleClick = (id) => {
     setEvents(prevEvents =>{
       return prevEvents.filter(event => id !== event.id)
   })
+  }
+
+  const handleClose = () => {
+    setShowModal(false)
   }
 
   const subtitle = "All the latest events in Marioland"
@@ -39,11 +44,10 @@ function App() {
         <h2>10% Off Coupon Code</h2>
         <p>Use the code TENOFF at the checkout</p>
       </Modal> */}
-      <Modal>
+      {showModal && (<Modal handleClose={handleClose}>
         <h2>Terms and Condition</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
-        <a href="#">find out more...</a>
-      </Modal>
+      </Modal>)}
     </div>
   );
 }
