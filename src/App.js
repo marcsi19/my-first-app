@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react'
+import Title from './components/Title'
 
 function App() {
 
@@ -15,9 +16,14 @@ function App() {
       return prevEvents.filter(event => id !== event.id)
   })
   }
+
+  const subtitle = "All the latest events in Marioland"
   
   return (
     <div className="App">
+      <Title title="Marioland Events" subtitle={subtitle} />
+      <br/>
+      <Title title="Another Title" subtitle="Another Subtitle" />
       {showEvents && (<div>
         <button onClick={() => setShowEvent(false)}>hide events</button>
       </div>)}
