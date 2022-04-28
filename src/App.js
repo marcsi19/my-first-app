@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
 import Title from './components/Title'
+import Modal from './components/Modal'
 
 function App() {
 
@@ -22,8 +23,6 @@ function App() {
   return (
     <div className="App">
       <Title title="Marioland Events" subtitle={subtitle} />
-      <br/>
-      <Title title="Another Title" subtitle="Another Subtitle" />
       {showEvents && (<div>
         <button onClick={() => setShowEvent(false)}>hide events</button>
       </div>)}
@@ -36,6 +35,15 @@ function App() {
           <button onClick={() => handleClick(event.id)}>delete event</button>
         </React.Fragment>
       ))}
+      {/* <Modal>
+        <h2>10% Off Coupon Code</h2>
+        <p>Use the code TENOFF at the checkout</p>
+      </Modal> */}
+      <Modal>
+        <h2>Terms and Condition</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
+        <a href="#">find out more...</a>
+      </Modal>
     </div>
   );
 }
