@@ -23,9 +23,6 @@ function App() {
     setShowModal(false)
   }
 
-  const handleModalShow = () =>{
-    setShowModal(true)
-  }
 
   const subtitle = "All the latest events in Marioland"
   
@@ -48,9 +45,9 @@ function App() {
         <h2>10% Off Coupon Code</h2>
         <p>Use the code TENOFF at the checkout</p>
       </Modal> */}
-      {!showModal && (<div>
-        <button onClick={handleModalShow}>Show Terms and condition</button>
-      </div>)}
+        <div>
+        <button onClick={() =>{setShowModal(true)}}>Show Terms and condition</button>
+        </div>
       {showModal && (<Modal handleClose={handleClose}>
         <h2>Terms and Condition</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
