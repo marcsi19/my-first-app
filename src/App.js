@@ -51,7 +51,7 @@ function App() {
         <div>
         <button onClick={() =>{setShowModal(true)}}>Show Terms and condition</button>
         </div>
-      {showModal && (<Modal handleClose={handleClose}>
+      {showModal && (<Modal handleClose={handleClose} isSalesModal={false}>
         <h2>Terms and Condition</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
       </Modal>)}
