@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react'
 import Title from './components/Title'
 import Modal from './components/Modal'
-import EventList from './EventList';
+import EventList from './components/EventList';
 
 function App() {
 
